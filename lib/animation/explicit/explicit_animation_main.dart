@@ -1,5 +1,6 @@
 import 'package:animation_example/animation/explicit/animation_controller_.dart';
-import 'package:animation_example/animation/explicit/animation_transform_rotate.dart';
+import 'package:animation_example/animation/explicit/animation_transform_translate.dart';
+import 'package:animation_example/animation/explicit/transform_rotate.dart';
 import 'package:animation_example/widget/custom_button.dart';
 import 'package:animation_example/widget/navigator_extension.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,14 @@ class ExplicitAnimationMain extends StatelessWidget {
               AnimationTransformRotate(),
               context: context,
             ),
-            text: "TransformRotate & animation",
+            text: "Transform translate & animation",
+          ),
+          CustomButton(
+            onTap: () => push(
+              TransformRotateExample(),
+              context: context,
+            ),
+            text: "Transform rotate & animation",
           ),
         ],
       ),

@@ -37,7 +37,7 @@ class _AnimationTransformRotateState extends State<AnimationTransformRotate>
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          "TransformRotate & animation",
+          "Transform translate & animation",
           style: TextStyle(fontSize: 16, color: Colors.black),
         ),
       ),

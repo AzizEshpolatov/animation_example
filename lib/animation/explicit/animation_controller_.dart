@@ -14,6 +14,23 @@ class _AnimationControllerWithAnimationState
     with SingleTickerProviderStateMixin {
   // SingleTickerProviderStateMixin - ishlatildi
 
+  /// animation controller bilan animatsiya yasab koramiz.
+  /// AnimationController bu animatsiyalarni boshqarish uchun ishlatiladigan
+  /// class bolib bunda animationni boshlanishi tugashi xullas barcha
+  /// parametrlari nazorat qilinadi.
+  /// misol qilib bazi parametrlarini korib chiqamiz:
+  /// *duration* - parametri bor bunda animatsionning davomiyligini berishimiz
+  /// kerak
+  /// *vsync* - animatsiyani ekran yangilanishlariga moslashtirib samaradorlik
+  /// oshiradi.vsync TickerProvider interfeysini talab qiladi va odatda
+  /// SingleTickerProviderStateMixin-dan yordamida foydalaniladi
+  ///
+  /// *forward* - animationni boshlash uchun foydalaniladigan method
+  /// *reverse* - animationni teskari yonalishda boshlaydi
+  /// *stop* - aimatsiyani toxtatish uchun
+  /// *reset* - animatsiyani boshlangich xolatga qaytaradi
+  /// *repeat* - animatsiyani takrorlab turadi
+
   late AnimationController _controller;
 
   @override
@@ -67,22 +84,6 @@ class _AnimationControllerWithAnimationState
 
   @override
   Widget build(BuildContext context) {
-    /// animation controller bilan animatsiya yasab koramiz.
-    /// AnimationController bu animatsiyalarni boshqarish uchun ishlatiladigan
-    /// class bolib bunda animationni boshlanishi tugashi xullas barcha
-    /// parametrlari nazorat qilinadi.
-    /// misol qilib bazi barametrlarini korib chiqamiz:
-    /// *duration* - parametri bor bunda animatsionning davomiyligini berishimiz
-    /// kerak
-    /// *vsync* - animatsiyani ekran yangilanishlariga moslashtirib samaradorlik
-    /// oshiradi.vsync TickerProvider interfeysini talab qiladi va odatda
-    /// SingleTickerProviderStateMixin-dan yordamida foydalaniladi
-    ///
-    /// *forward* - animationni boshlash uchun foydalaniladigan method
-    /// *reverse* - animationni teskari yonalishda boshlaydi
-    /// *stop* - aimatsiyani toxtatish uchun
-    /// *reset* - animatsiyani boshlangich xolatga qaytaradi
-    /// *repeat* - animatsiyani takrorlab turadi
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
