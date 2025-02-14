@@ -21,12 +21,6 @@ types of animations in Flutter: **Implicit** (automatic) and **Explicit** (contr
 Implicit animations allow you to create animations in a simplified way. In these animations, you
 only need to change animation parameters, and the animation happens automatically.
 
-### Examples:
-
-- `AnimatedOpacity`
-- `AnimatedSize`
-- `AnimatedPositioned`
-
 ### Capabilities:
 
 - **AnimatedAlign** → **AlignTransition**
