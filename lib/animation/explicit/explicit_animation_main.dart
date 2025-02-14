@@ -37,7 +37,7 @@ class ExplicitAnimationMain extends StatelessWidget {
               AnimationTransformRotate(),
               context: context,
             ),
-            text: "TransformRotate",
+            text: "TransformRotate & animation",
           ),
         ],
       ),
