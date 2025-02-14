@@ -58,7 +58,7 @@ class _AnimationTransformRotateState extends State<AnimationTransformRotate>
                 child: Transform.rotate(
                   angle: _controller.value * 2 * pi,
                   child: Image.asset(
-                    'assets/images/img.png',
+                    'assets/images/person.png',
                     width: 100,
                     height: 100,
                   ),
