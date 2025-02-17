@@ -1,3 +1,4 @@
+import 'package:animation_example/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 
 /// AnimatedContainer – Container widgetining kengaytirilgan ko'rinishi bo'lib,
@@ -10,8 +11,18 @@ import 'package:flutter/material.dart';
 /// Animatsiyaga maxsus controller talab qilinmaydigan oddiy holatlarda
 /// ishlatish mumkin
 
-class AnimatedContainerExample extends StatelessWidget {
+class AnimatedContainerExample extends StatefulWidget {
   const AnimatedContainerExample({super.key});
+
+  @override
+  State<AnimatedContainerExample> createState() =>
+      _AnimatedContainerExampleState();
+}
+
+class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
+  bool _isExpanded = false;
+
+  void _toggleContainer() => setState(() => _isExpanded = !_isExpanded);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +35,41 @@ class AnimatedContainerExample extends StatelessWidget {
         ),
       ),
       backgroundColor: Colors.white,
-      body: Column(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AnimatedContainer(
+              duration: Duration(seconds: 3),
+              curve: Curves.fastOutSlowIn,
+              height: _isExpanded ? 200 : 100,
+              width: _isExpanded ? 200 : 100,
+              decoration: BoxDecoration(
+                color: Colors.green,
+                borderRadius: _isExpanded
+                    ? BorderRadius.circular(16)
+                    : BorderRadius.circular(0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, 0.3),
+                    blurRadius: 8,
+                    spreadRadius: 2,
+                    offset: const Offset(4, 4),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .65,
+              child: CustomButton(
+                onTap: _toggleContainer,
+                text: "start animation",
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
