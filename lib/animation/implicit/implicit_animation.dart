@@ -1,3 +1,4 @@
+import 'package:animation_example/animation/implicit/animated_container_example.dart';
 import 'package:animation_example/animation/implicit/animated_opacity.dart';
 import 'package:animation_example/widget/custom_button.dart';
 import 'package:animation_example/widget/navigator_extension.dart';
@@ -42,7 +43,7 @@ class ImplicitAnimationPage extends StatelessWidget {
             text: "Animated Opacity example",
           ),
           CustomButton(
-            onTap: () => push(AnimatedOpacityPage(), context: context),
+            onTap: () => push(AnimatedContainerExample(), context: context),
             text: "Animated Controller example",
           ),
           CustomButton(
