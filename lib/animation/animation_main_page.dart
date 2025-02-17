@@ -35,14 +35,6 @@ class AnimationMainPage extends StatelessWidget {
             onTap: () {},
           ),
           CustomButton(
-            text: "Physics Based animation",
-            onTap: () {},
-          ),
-          CustomButton(
-            text: "Staggered animation",
-            onTap: () {},
-          ),
-          CustomButton(
             text: "Custom animation",
             onTap: () => push(MainCustomAnimation(), context: context),
           ),
