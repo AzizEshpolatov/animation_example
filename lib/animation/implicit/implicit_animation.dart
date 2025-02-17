@@ -1,11 +1,7 @@
+import 'package:animation_example/animation/implicit/animated_opacity.dart';
+import 'package:animation_example/widget/custom_button.dart';
+import 'package:animation_example/widget/navigator_extension.dart';
 import 'package:flutter/material.dart';
-
-class ImplicitAnimationPage extends StatefulWidget {
-  const ImplicitAnimationPage({super.key});
-
-  @override
-  State<ImplicitAnimationPage> createState() => _ImplicitAnimationPageState();
-}
 
 /// * Implicit animation *
 /// Bu animation turi soddalashtirilgan va animatsiya yasaash biroz sodda bolgan
@@ -25,9 +21,48 @@ class ImplicitAnimationPage extends StatefulWidget {
 /// animatsiya turi tezkor va ishonchli bo'lib, oddiy animatsiyalar uchun
 /// juda mos keladi.
 
-class _ImplicitAnimationPageState extends State<ImplicitAnimationPage> {
+class ImplicitAnimationPage extends StatelessWidget {
+  const ImplicitAnimationPage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text(
+          "Implicit animation",
+          style: TextStyle(fontSize: 16, color: Colors.black),
+        ),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CustomButton(
+            onTap: () => push(AnimatedOpacityPage(), context: context),
+            text: "Animated Opacity example",
+          ),
+          CustomButton(
+            onTap: () => push(AnimatedOpacityPage(), context: context),
+            text: "Animated Controller example",
+          ),
+          CustomButton(
+            onTap: () => push(AnimatedOpacityPage(), context: context),
+            text: "Animated align example",
+          ),
+          CustomButton(
+            onTap: () => push(AnimatedOpacityPage(), context: context),
+            text: "Animated padding example",
+          ),
+          CustomButton(
+            onTap: () => push(AnimatedOpacityPage(), context: context),
+            text: "Animated positioned example",
+          ),
+          CustomButton(
+            onTap: () => push(AnimatedOpacityPage(), context: context),
+            text: "Animated switcher example",
+          ),
+        ],
+      ),
+    );
   }
 }
