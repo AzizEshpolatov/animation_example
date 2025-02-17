@@ -1,6 +1,7 @@
 import 'package:animation_example/animation/custom/main_custom_animation.dart';
 import 'package:animation_example/animation/explicit/explicit_animation_main.dart';
 import 'package:animation_example/animation/hero/main_hero_animation.dart';
+import 'package:animation_example/animation/implicit/implicit_animation.dart';
 import 'package:animation_example/widget/custom_button.dart';
 import 'package:animation_example/widget/navigator_extension.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class AnimationMainPage extends StatelessWidget {
           ),
           CustomButton(
             text: "Implicit animation",
-            onTap: () {},
+            onTap: () => push(ImplicitAnimationPage(), context: context),
           ),
           CustomButton(
             text: "Custom animation",
