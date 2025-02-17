@@ -18,8 +18,60 @@ class AnimatedAlignExample extends StatefulWidget {
 }
 
 class _AnimatedAlignExampleState extends State<AnimatedAlignExample> {
+  bool _isTopLeft = true;
+
+  void _toggleAlignment() {
+    setState(() {
+      _isTopLeft = !_isTopLeft;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text(
+          "AnimatedAlign Example",
+          style: TextStyle(fontSize: 16, color: Colors.black),
+        ),
+      ),
+      body: Stack(
+        children: [
+          Container(
+            color: Colors.grey[300],
+            child: AnimatedAlign(
+              duration: const Duration(seconds: 1),
+              curve: Curves.easeInOut,
+              alignment: _isTopLeft ? Alignment.topLeft : Alignment.bottomRight,
+              child: Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      blurRadius: 8,
+                      spreadRadius: 2,
+                      offset: const Offset(4, 4),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 20,
+            left: 20,
+            child: ElevatedButton(
+              onPressed: _toggleAlignment,
+              child: const Text('Toggle Position'),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

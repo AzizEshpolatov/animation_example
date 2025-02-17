@@ -1,3 +1,4 @@
+import 'package:animation_example/animation/implicit/animated_align_example.dart';
 import 'package:animation_example/animation/implicit/animated_container_example.dart';
 import 'package:animation_example/animation/implicit/animated_opacity.dart';
 import 'package:animation_example/widget/custom_button.dart';
@@ -47,20 +48,8 @@ class ImplicitAnimationPage extends StatelessWidget {
             text: "Animated Controller example",
           ),
           CustomButton(
-            onTap: () => push(AnimatedOpacityPage(), context: context),
+            onTap: () => push(AnimatedAlignExample(), context: context),
             text: "Animated align example",
-          ),
-          CustomButton(
-            onTap: () => push(AnimatedOpacityPage(), context: context),
-            text: "Animated padding example",
-          ),
-          CustomButton(
-            onTap: () => push(AnimatedOpacityPage(), context: context),
-            text: "Animated positioned example",
-          ),
-          CustomButton(
-            onTap: () => push(AnimatedOpacityPage(), context: context),
-            text: "Animated switcher example",
           ),
         ],
       ),
